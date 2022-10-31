@@ -1,6 +1,4 @@
 # Вычислить число Пи c заданной точностью d
-
-
 def pi_digit(n):
     p = 0
     for i in range(n):
@@ -8,9 +6,7 @@ def pi_digit(n):
     return p
 
 
-print(pi_digit(100))
-d = str(float(input("Введите точность \n"))).split('.')
-print(d)
-# print(round(pi_digit(100), d))
-
-
+print(pi_digit(1000))
+d = input("Введите точность \n")
+print(len(d[2:]))
+print(round(pi_digit(100), len(d[2:])))
