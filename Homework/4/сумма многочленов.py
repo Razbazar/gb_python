@@ -20,6 +20,7 @@ with open("1.txt", "r", encoding="utf-8") as fl_one, open("2.txt", "r", encoding
     final = str(first + second).replace('*', '').split()
     for i in range(len(final)):
         if final[i][-1] in map(str, list(stepen_dict.values())) and "x" in final[i]:
-            final[i] = final[i].replace(final[i][-1], chr(list(stepen_dict.keys())[list(stepen_dict.values()).index(int(final[i][-1]))]))
+            final[i] = final[i].replace(final[i][-1],
+                                    chr(list(stepen_dict.keys())[list(stepen_dict.values()).index(int(final[i][-1]))]))
     print(" ".join(final)+" = 0", file=fl_three)
 
