@@ -6,7 +6,7 @@ def pi_digit(n):
     return p
 
 
-print(pi_digit(1000))
+print(pi_digit(11))
 d = input("Введите точность \n")
 print(len(d[2:]))
 print(round(pi_digit(100), len(d[2:])))
