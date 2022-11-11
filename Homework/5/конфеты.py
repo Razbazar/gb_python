@@ -28,7 +28,7 @@ def bot(limit):
     return v
 
 
-stack = 60
+stack = 2021
 while True:
     chs = input("Выберите режим игры. 1 - с ботом, 2 - с человеком ")
     if not check(chs, limit=2):
