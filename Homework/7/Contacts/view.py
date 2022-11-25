@@ -1,5 +1,5 @@
 def show_info(a):
-    print(a)
+    print(a, flush=True)
 
 
 def get_data(txt=""):

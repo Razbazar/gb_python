@@ -1,3 +1,3 @@
 import controller
 
-controller.start_loop()
+controller.start()
