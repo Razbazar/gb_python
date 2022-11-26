@@ -50,7 +50,9 @@ def start():
                 model.delete_field(action_name)
                 view.get_data(f"Запись номер {action_name} удалена\n" + txt)
             case "8":
-                view.show_info('Шас я найду')
+                action_name = view.get_data('Введите текст для поиска\n')
+                f_string = model.search(action_name)
+                view.show_info(f_string)
                 view.get_data(txt)
             case "9":
                 view.show_info('Шас я отредактирую')

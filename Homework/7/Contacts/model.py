@@ -1,6 +1,4 @@
 import os.path
-
-import view
 import pandas as pd
 import os
 from controller import *
@@ -65,3 +63,7 @@ def add_field(fio_param, phone):
 def delete_field(field_to_delete):
     data.drop(field_to_delete, inplace=True)
     data.reset_index(drop=True, inplace=True)
+
+
+def search(text_to_search):
+    return data[data.apply(lambda row: row.astype(str).str.contains(text_to_search, case=False).any(), axis=1)]
