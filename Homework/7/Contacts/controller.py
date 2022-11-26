@@ -54,9 +54,6 @@ def start():
                 f_string = model.search(action_name)
                 view.show_info(f_string)
                 view.get_data(txt)
-            case "9":
-                view.show_info('Шас я отредактирую')
-                view.get_data(txt)
             case "0":
                 view.show_info("Пока-пока")
                 return
