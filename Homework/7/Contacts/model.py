@@ -1,6 +1,6 @@
 import os.path
 import pandas as pd
-from controller import *
+import view
 
 data = pd.DataFrame(columns=['Фамилия', 'Имя', 'Отчество', 'Телефон'])
 
@@ -15,6 +15,7 @@ def start_list():
 6 - Добавить запись
 7 - Удалить запись  
 8 - Найти запись
+9 - Изменить запись 
 0 - Выйти 
 ''')
 
@@ -61,6 +62,12 @@ def add_field(fio_param, phone):
 def delete_field(field_to_delete):
     data.drop(field_to_delete, inplace=True)
     data.reset_index(drop=True, inplace=True)
+
+
+def change_filed(field_to_change):
+    for i in range(len(data.iloc[field_to_change])):
+        data.iloc[field_to_change][i] = view.get_data(f"Текущее значение поля {data.columns[i]}: "
+                                                      f"{data.iloc[field_to_change][i]}. Введите новое значение\n")
 
 
 def search(text_to_search):

@@ -54,6 +54,11 @@ def start():
                 f_string = model.search(action_name)
                 view.show_info(f_string)
                 view.get_data(txt)
+            case "9":
+                view.show_info(tabulate(model.data, headers='keys', tablefmt='psql'))
+                action_name = int(view.get_data("Выберите номер записи, которую хотите изменить\n"))
+                model.change_filed(action_name)
+                view.get_data("Поле изменено\n" + txt)
             case "0":
                 view.show_info("Пока-пока")
                 return
