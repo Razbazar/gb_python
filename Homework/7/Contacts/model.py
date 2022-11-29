@@ -1,6 +1,5 @@
 import os.path
 import pandas as pd
-import os
 from controller import *
 
 data = pd.DataFrame(columns=['Фамилия', 'Имя', 'Отчество', 'Телефон'])
@@ -16,7 +15,6 @@ def start_list():
 6 - Добавить запись
 7 - Удалить запись  
 8 - Найти запись
-9 - Редактировать запись
 0 - Выйти 
 ''')
 
@@ -24,7 +22,7 @@ def start_list():
 def load_db(file_to_load):
     global data
     try:
-        data = pd.read_csv(file_to_load + '.csv')
+        data = pd.read_csv(file_to_load)
         return True
     except FileNotFoundError:
         return
@@ -37,7 +35,7 @@ def save_db(file_to_save):
 
 def delete_db(file_to_delete):
     try:
-        os.remove(file_to_delete + '.csv')
+        os.remove(file_to_delete)
         return True
     except FileNotFoundError:
         return
